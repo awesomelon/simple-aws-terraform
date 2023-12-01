@@ -58,3 +58,10 @@ variable "instance_type" {
     default = "t2.micro"
     type = string
 }
+
+
+variable "s3_bucket" {
+    description = "value of s3 bucket"
+    default = "example-bucket"
+    type = string    
+}

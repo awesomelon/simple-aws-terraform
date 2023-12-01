@@ -31,6 +31,7 @@
 - target_port
 - sub_domain
 - domain_name
+- s3_bucket
 
 `env.tf` 파일을 통해 AWS 관련 key 변수를 받습니다.
 
@@ -44,6 +45,36 @@
 2. **plan**: Terraform이 수행할 작업을 미리 볼 수 있습니다: `terraform plan`
 3. **apply**: Terraform을 사용하여 인프라를 배포합니다:: `terraform apply`
 4. **destroy**: 더 이상 리소스가 필요 없을 때는 다음 명령어로 리소스를 제거할 수 있습니다:: `terraform destroy`
+
+<br >
+
+## Terraform plan
+
+인프라 적용 계획 확인 variable에 각 서비스에 맞는 정보 입력
+
+```bash
+$ terraform plan -var="sub_domain=SUB_DOMAIN" -var="lb_name=LB_NAME" -var="s3_bucket=BUCKET_NAME" -var="key_name="KEY_NAME" -var="domain_name=example.com"
+```
+
+<br >
+
+## Terraform apply
+
+인프라 적용 실행
+
+```bash
+$ terraform apply -var="sub_domain=SUB_DOMAIN" -var="lb_name=LB_NAME" -var="s3_bucket=BUCKET_NAME" -var="key_name="KEY_NAME" -var="domain_name=example.com"
+```
+
+<br >
+
+## Terraform destroy
+
+적용했던 인프라 삭제
+
+```bash
+$ terraform destroy -var="sub_domain=SUB_DOMAIN" -var="lb_name=LB_NAME" -var="s3_bucket=BUCKET_NAME" -var="key_name="KEY_NAME" -var="domain_name=example.com"
+```
 
 ## 주의 사항
 
